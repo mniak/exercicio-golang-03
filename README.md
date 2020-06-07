@@ -16,8 +16,7 @@ go get github.com/revel/revel
 go get github.com/revel/cmd/revel
 
 # Clona o repositorio
-mkdir $GOPATH/src
-git clone https://github.com/mniak/exercicio-golang-03.git -o $GOPATH/src/exercicio-golang-03
+git clone https://github.com/mniak/exercicio-golang-03.git $GOPATH/src/exercicio-golang-03
 
 # Executa o projeto
 revel run -a desafio-curso-03
@@ -49,8 +48,7 @@ go get github.com/revel/revel
 go get github.com/revel/cmd/revel
 
 # Clona o repositorio
-mkdir "$env:GOPATH/src"
-git clone https://github.com/mniak/exercicio-golang-03.git -o "$env:GOPATH/src/exercicio-golang-03"
+git clone https://github.com/mniak/exercicio-golang-03.git "$env:GOPATH/src/exercicio-golang-03"
 
 # Executa o projeto
 revel run -a desafio-curso-03
