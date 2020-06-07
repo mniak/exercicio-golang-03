@@ -4,10 +4,10 @@ import (
 	"github.com/revel/revel"
 )
 
-type App struct {
+type Links struct {
 	*revel.Controller
 }
 
-func (c App) Index() revel.Result {
+func (c Links) Listing() revel.Result {
 	return c.Render()
 }
