@@ -4,7 +4,7 @@ Exemplo 03
 ## Como rodar
 ### MacOS/Linux
 
-Clona e executa o projeto.
+**Clona e executa o projeto**
 ```bash
 # Cria uma pasta, seta como GOPATH e coloca a pasta bin no PATH
 mkdir ~/gocode
@@ -36,7 +36,7 @@ revel run -a desafio-curso-03
 ### Windows
 Os scripts devem ser rodados no Powershell
 
-Clona e executa o projeto.
+**Clona e executa o projeto**
 ```powershell
 # Cria uma pasta, seta como GOPATH e coloca a pasta bin no PATH
 mkdir ~/gocode
