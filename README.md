@@ -40,7 +40,7 @@ Clona e executa o projeto.
 ```powershell
 # Cria uma pasta, seta como GOPATH e coloca a pasta bin no PATH
 mkdir ~/gocode
-$env:GOPATH="~/gocode"
+$env:GOPATH="$env:USERPROFILE/gocode"
 $env:PATH="$env:PATH;$env:GOPATH/bin"
 
 # Instala o revel
