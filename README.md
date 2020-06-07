@@ -19,7 +19,7 @@ go get github.com/revel/cmd/revel
 git clone https://github.com/mniak/exercicio-golang-03.git $GOPATH/src/exercicio-golang-03
 
 # Executa o projeto
-revel run -a desafio-curso-03
+revel run -a exercicio-golang-03
 ```
 
 Caso o _revel_ já tenha sido instalado e o projeto já tenha sido clonado usando as instruções acima mas você tenha fechado o terminal e agora não sabe como rodar em um novo terminal, use o trecho abaixo.
@@ -30,7 +30,7 @@ export GOPATH=~/gocode
 export PATH="$PATH:$GOPATH/bin"
 
 # Executa o projeto
-revel run -a desafio-curso-03
+revel run -a exercicio-golang-03
 ```
 
 ### Windows
@@ -51,7 +51,7 @@ go get github.com/revel/cmd/revel
 git clone https://github.com/mniak/exercicio-golang-03.git "$env:GOPATH/src/exercicio-golang-03"
 
 # Executa o projeto
-revel run -a desafio-curso-03
+revel run -a exercicio-golang-03
 ```
 
 Caso o _revel_ já tenha sido instalado e o projeto já tenha sido clonado usando as instruções acima mas você tenha fechado o terminal e agora não sabe como rodar em um novo terminal, use o trecho abaixo.
@@ -64,5 +64,5 @@ $env:GOPATH="~/gocode"
 $env:PATH="$env:PATH;$env:GOPATH/bin"
 
 # Executa o projeto
-revel run -a desafio-curso-03
+revel run -a exercicio-golang-03
 ```
