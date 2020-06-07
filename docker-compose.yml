@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  webapp:
+    build: .
+    ports:
+    - "9000:9000"
+    links:
+    - database
+  database:
+    build: ./database
+    

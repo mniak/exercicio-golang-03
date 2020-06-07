@@ -2,7 +2,18 @@ Exemplo 03
 ===================
 
 ## Como rodar
-### MacOS/Linux
+
+### Em um container Docker
+
+```bash
+docker-compose build
+docker-compose up
+```
+O projeto estará rodando em http://localhost:9000
+
+### Na raça (sem containers)
+
+#### No MacOS ou no Linux
 
 **Clona e executa o projeto**
 ```bash
@@ -36,7 +47,7 @@ revel run -a exercicio-golang-03
 ```
 O projeto estará rodando em http://localhost:9000
 
-### Windows
+#### No Windows
 Os scripts devem ser rodados no Powershell
 
 **Clona e executa o projeto**

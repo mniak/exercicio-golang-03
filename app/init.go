@@ -1,6 +1,10 @@
 package app
 
 import (
+	"database/sql"
+	"fmt"
+
+	_ "github.com/lib/pq"
 	"github.com/revel/revel"
 )
 
@@ -11,6 +15,23 @@ var (
 	// BuildTime revel app build-time (ldflags)
 	BuildTime string
 )
+
+var DB *sql.DB
+
+func InitDB() {
+
+	databaseHost, ok := revel.Config.String("database.host")
+	if !ok {
+		revel.AppLog.Fatal("Could not load database.host from config")
+	}
+	connstring := fmt.Sprintf("host=%s user=%s password='%s' dbname=%s sslmode=disable", databaseHost, "docker", "docker", "docker")
+
+	var err error
+	DB, err = sql.Open("postgres", connstring)
+	if err != nil {
+		revel.AppLog.Fatal("DB Error", err)
+	}
+}
 
 func init() {
 	// Filters is the default set of global filters.
@@ -34,7 +55,7 @@ func init() {
 	// revel.DevMode and revel.RunMode only work inside of OnAppStart. See Example Startup Script
 	// ( order dependent )
 	// revel.OnAppStart(ExampleStartupScript)
-	// revel.OnAppStart(InitDB)
+	revel.OnAppStart(InitDB)
 	// revel.OnAppStart(FillCache)
 }
 
