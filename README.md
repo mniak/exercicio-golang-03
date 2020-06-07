@@ -65,7 +65,7 @@ Lembre-se de usar o Powershell
 
 ```powershell
 # Seta GOPATH e coloca a pasta bin no PATH
-$env:GOPATH="~/gocode"
+$env:GOPATH="$env:USERPROFILE/gocode"
 $env:PATH="$env:PATH;$env:GOPATH/bin"
 
 # Executa o projeto
