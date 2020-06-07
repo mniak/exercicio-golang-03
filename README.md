@@ -22,6 +22,7 @@ cd $GOPATH/src/exercicio-golang-03
 # Executa o projeto
 revel run -a exercicio-golang-03
 ```
+O projeto estará rodando em http://localhost:9000
 
 Caso o _revel_ já tenha sido instalado e o projeto já tenha sido clonado usando as instruções acima mas você tenha fechado o terminal e agora não sabe como rodar em um novo terminal, use o trecho abaixo.
 
@@ -33,6 +34,7 @@ export PATH="$PATH:$GOPATH/bin"
 # Executa o projeto
 revel run -a exercicio-golang-03
 ```
+O projeto estará rodando em http://localhost:9000
 
 ### Windows
 Os scripts devem ser rodados no Powershell
@@ -55,6 +57,7 @@ cd "$env:GOPATH/src/exercicio-golang-03"
 # Executa o projeto
 revel run -a exercicio-golang-03
 ```
+O projeto estará rodando em http://localhost:9000
 
 Caso o _revel_ já tenha sido instalado e o projeto já tenha sido clonado usando as instruções acima mas você tenha fechado o terminal e agora não sabe como rodar em um novo terminal, use o trecho abaixo.
 
@@ -68,3 +71,4 @@ $env:PATH="$env:PATH;$env:GOPATH/bin"
 # Executa o projeto
 revel run -a exercicio-golang-03
 ```
+O projeto estará rodando em http://localhost:9000
