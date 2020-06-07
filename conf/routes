@@ -7,7 +7,7 @@ module:testrunner
 # module:jobs
 
 
-GET     /                                       Links.Listing
+GET     /                                       Links.List
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

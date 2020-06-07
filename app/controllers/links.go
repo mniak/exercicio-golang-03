@@ -8,6 +8,6 @@ type Links struct {
 	*revel.Controller
 }
 
-func (c Links) Listing() revel.Result {
+func (c Links) List() revel.Result {
 	return c.Render()
 }
