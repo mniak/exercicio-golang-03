@@ -1,0 +1,36 @@
+{{set . "title" "Links de Pagamento"}}
+{{template "header.html" .}}
+
+<h2>Criar Link</h2>
+<form method="POST">
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Nome</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="name" placeholder="Nome">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Descrição</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="description" placeholder="Descrição">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="type" class="col-sm-2 col-form-label">Tipo</label>
+    <div class="col-sm-10">
+      <select name="type" class="form-control">
+        <option value="Asset" selected>Material Físico</option>
+        <option value="Digital">Produto Digital</option>
+        <option value="Service">Serviço</option>
+        <option value="Payment">Pagamento Simples</option>
+        <option value="Recurrent">Pagamento Recorrente</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="float-right">
+    <a class="btn btn-light" href="list">Cancelar</a>
+    <button type="submit" class="btn btn-primary">Criar</input>
+  </div>
+</form>
+{{template "footer.html" .}}

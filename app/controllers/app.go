@@ -9,5 +9,5 @@ type App struct {
 }
 
 func (c App) Index() revel.Result {
-	return c.Redirect("links/list")
+	return c.Redirect(Links.List)
 }

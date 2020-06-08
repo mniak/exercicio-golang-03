@@ -4,8 +4,7 @@ services:
     build: .
     ports:
     - "9000:9000"
-    links:
-    - database
+    env_file: [ .env ]
   database:
     build: ./database
     ports:

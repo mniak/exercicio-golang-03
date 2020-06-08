@@ -1,29 +1,29 @@
 {{set . "title" "Links de Pagamento"}}
 {{template "header.html" .}}
 
-<div class="container">
+<h2>Links de Pagamento</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Produto</th>
+      <th scope="col">Link</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{range .links}}
+    <tr>
+      <td>{{.name}}</td>
+      <td><a href="{{.link}}">{{.link}}</a></td>
+      <td>
+        <form method="POST" action="delete?id={{.id}}">
+          <button type="submit" class="btn btn-danger">Apagar</button>
+        </form>
+      </td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+<a class="btn btn-primary float-right" href="new">Criar Link</a>
 
-  <a class="btn btn-primary float-right" href="new">Novo Link</a>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Produto</th>
-        <th scope="col">Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{range .links}}
-      <tr>
-        <td>{{.name}}</td>
-        <td><a href="{{.link}}">{{.link}}</a></td>
-      </tr>
-      {{end}}
-    </tbody>
-  </table>
-
-
-  <a class="btn btn-primary float-right" href="new">Novo Link</a>
-
-</div>
 {{template "footer.html" .}}
