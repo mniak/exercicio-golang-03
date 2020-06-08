@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	_ "github.com/lib/pq"
+	"github.com/mniak/superlink-sdk"
 	"github.com/revel/revel"
 )
 
@@ -17,12 +18,14 @@ var (
 )
 
 var DB *sql.DB
+var SuperLink *superlink.Client
 
 func InitDB() {
 
 	databaseHost, ok := revel.Config.String("database.host")
 	if !ok {
 		revel.AppLog.Fatal("Could not load database.host from config")
+		return
 	}
 	connstring := fmt.Sprintf("host=%s user=%s password='%s' dbname=%s sslmode=disable", databaseHost, "docker", "docker", "docker")
 
@@ -30,6 +33,29 @@ func InitDB() {
 	DB, err = sql.Open("postgres", connstring)
 	if err != nil {
 		revel.AppLog.Fatal("DB Error", err)
+	}
+}
+
+func InitSuperLink() {
+	baseurl, ok := revel.Config.String("superlink.baseurl")
+	if !ok {
+		revel.AppLog.Fatal("Could not load superlink.baseurl config")
+		return
+	}
+	clientid, ok := revel.Config.String("superlink.clientid")
+	if !ok {
+		revel.AppLog.Fatal("Could not load superlink.clientid from config")
+		return
+	}
+	clientsecret, ok := revel.Config.String("superlink.clientsecret")
+	if !ok {
+		revel.AppLog.Fatal("Could not load superlink.clientsecret from config")
+		return
+	}
+	revel.AppLog.Debug("Dados:", "BaseUrl", baseurl, "ClientId", clientid, "ClientSecret", clientsecret)
+	SuperLink = superlink.NewClient(baseurl, clientid, clientsecret)
+	if revel.DevMode {
+		SuperLink.SetDebug(true)
 	}
 }
 
@@ -56,6 +82,7 @@ func init() {
 	// ( order dependent )
 	// revel.OnAppStart(ExampleStartupScript)
 	revel.OnAppStart(InitDB)
+	revel.OnAppStart(InitSuperLink)
 	// revel.OnAppStart(FillCache)
 }
 
