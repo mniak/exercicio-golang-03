@@ -108,4 +108,4 @@ A aplicação vai ler das seguintes variáveis de ambiente
 - **`SUPERLINK_CLIENT_ID`:** Client ID
 - **`SUPERLINK_CLIENT_SECRET`:** Client Secret
 
-Para execução da solução usando containers via `docker-compose`, deve ser alterado o arquivo `.env` para conter os valores desejados e adequados.
+Para rodar a aplicação usando containers via `docker-compose`, deve ser alterado o arquivo `.env` para conter os valores desejados e adequados.
