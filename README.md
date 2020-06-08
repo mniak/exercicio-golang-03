@@ -5,6 +5,7 @@ Exercício 03
 
 ### ~~Em um container Docker~~ não tá funcionando
 
+Clone o projeto e num terminal, dentro do diretório onde o repositório for clonado rode as seguintes linhas:
 ```bash
 docker-compose build
 docker-compose up
@@ -30,6 +31,9 @@ go get github.com/revel/cmd/revel
 git clone https://github.com/mniak/exercicio-golang-03.git $GOPATH/src/exercicio-golang-03
 cd $GOPATH/src/exercicio-golang-03
 
+# Roda o banco de dados
+docker-compose up -d database
+
 # Executa o projeto
 revel run -a exercicio-golang-03
 ```
@@ -41,6 +45,10 @@ Caso o _revel_ já tenha sido instalado e o projeto já tenha sido clonado usand
 # Seta GOPATH e coloca a pasta bin no PATH
 export GOPATH=~/gocode
 export PATH="$PATH:$GOPATH/bin"
+cd $GOPATH/src/exercicio-golang-03
+
+# Roda o banco de dados
+docker-compose up -d database
 
 # Executa o projeto
 revel run -a exercicio-golang-03
@@ -65,6 +73,9 @@ go get github.com/revel/cmd/revel
 git clone https://github.com/mniak/exercicio-golang-03.git "$env:GOPATH/src/exercicio-golang-03"
 cd "$env:GOPATH/src/exercicio-golang-03"
 
+# Roda o banco de dados
+docker-compose up -d database
+
 # Executa o projeto
 revel run -a exercicio-golang-03
 ```
@@ -78,6 +89,12 @@ Lembre-se de usar o Powershell
 # Seta GOPATH e coloca a pasta bin no PATH
 $env:GOPATH="$env:USERPROFILE/gocode"
 $env:PATH="$env:PATH;$env:GOPATH/bin"
+
+# Opcionalmente entra no diretório
+cd "$env:GOPATH/src/exercicio-golang-03"
+
+# Roda o banco de dados
+docker-compose up -d database
 
 # Executa o projeto
 revel run -a exercicio-golang-03

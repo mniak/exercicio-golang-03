@@ -8,4 +8,5 @@ services:
     - database
   database:
     build: ./database
-    
+    ports:
+    - "5432:5432"
