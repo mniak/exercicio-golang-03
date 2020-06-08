@@ -52,8 +52,8 @@ func (c Links) New() revel.Result {
 			return c.RenderError(err)
 		}
 
-		sql := "INSERT INTO Link (name, link) VALUES ($1, $2);"
-		_, err = app.DB.Exec(sql, link.Name, link.ShortURL)
+		sql := "INSERT INTO Link (id, name, link) VALUES ($1, $2, $3);"
+		_, err = app.DB.Exec(sql, link.ID, link.Name, link.ShortURL)
 		if err != nil {
 			revel.AppLog.Error("DB Error", "Error", err)
 			return c.RenderError(err)
@@ -65,8 +65,16 @@ func (c Links) New() revel.Result {
 
 func (c Links) Delete() revel.Result {
 	if c.Request.Method == http.MethodPost {
+		id := c.Params.Query.Get("id")
+
+		err := app.SuperLink.DeleteLink(id)
+		if err != nil {
+			revel.AppLog.Error("Form Error", "Error", err)
+			return c.RenderError(err)
+		}
+
 		sql := "DELETE FROM Link where id = $1;"
-		_, err := app.DB.Exec(sql, c.Params.Query.Get("id"))
+		_, err = app.DB.Exec(sql, id)
 		if err != nil {
 			revel.AppLog.Error("DB Error", "Error", err)
 			return c.RenderError(err)
