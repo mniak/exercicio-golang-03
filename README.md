@@ -1,9 +1,9 @@
-Exemplo 03
+Exercício 03
 ===================
 
 ## Como rodar
 
-### Em um container Docker
+### ~~Em um container Docker~~ não tá funcionando
 
 ```bash
 docker-compose build
