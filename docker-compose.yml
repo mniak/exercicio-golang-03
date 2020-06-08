@@ -5,7 +5,14 @@ services:
     ports:
     - "9000:9000"
     env_file: [ .env ]
+    networks:
+    - app_net
   database:
     build: ./database
     ports:
     - "5432:5432"
+    networks:
+    - app_net
+networks:
+  app_net:
+    driver: bridge
