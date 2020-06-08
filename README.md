@@ -100,3 +100,10 @@ docker-compose up -d database
 revel run -a exercicio-golang-03
 ```
 O projeto estará rodando em http://localhost:9000
+
+
+## Credenciais para uso na API
+A aplicação vai ler das seguintes variáveis de ambiente
+
+- **`SUPERLINK_CLIENT_ID`:** Client ID
+- **`SUPERLINK_CLIENT_SECRET`:** Client Secret
