@@ -52,7 +52,6 @@ func InitSuperLink() {
 		revel.AppLog.Fatal("Could not load superlink.clientsecret from config")
 		return
 	}
-	revel.AppLog.Debug("Dados:", "BaseUrl", baseurl, "ClientId", clientid, "ClientSecret", clientsecret)
 	SuperLink = superlink.NewClient(baseurl, clientid, clientsecret)
 	if revel.DevMode {
 		SuperLink.SetDebug(true)
