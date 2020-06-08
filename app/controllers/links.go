@@ -30,7 +30,7 @@ func (c Links) List() revel.Result {
 
 func (c Links) New() revel.Result {
 	if c.Request.Method == http.MethodPost {
-		var price int
+		var price float64
 		var name string
 		var linktype string
 		var shippingtype string
@@ -41,7 +41,7 @@ func (c Links) New() revel.Result {
 
 		link, err := app.SuperLink.CreateLink(superlink.Link{
 			Name:  name,
-			Price: price,
+			Price: int(price * 100),
 			Type:  linktype,
 			Shipping: superlink.Shipping{
 				Type: shippingtype,
