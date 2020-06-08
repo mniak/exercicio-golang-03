@@ -3,6 +3,8 @@ Exercício 03
 
 ## Como rodar
 
+**Warning:** Caso você tenha um posgres rodando na sua máquina, deve parar ele antes de tentar subir o meu banco de dados pelo `docker-compose`, pois o meu também roda na porta `5432`.
+
 ### ~~Em um container Docker~~ não tá funcionando
 
 Clone o projeto e num terminal, dentro do diretório onde o repositório for clonado rode as seguintes linhas:
